@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><title>React App</title><link href="/static/css/main.d41d8cd9.css" rel="stylesheet"></head><body><script>window.fbAsyncInit = function() {
+            FB.init({
+                appId: '143280559734605',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v2.10'
+            });
+            FB.AppEvents.logPageView();
+
+            const statusChangeCallback = (response) => {
+                console.log(response);
+            };
+
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        };
+
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        }
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.10&appId=143280559734605';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><div onlogin="checkLoginState()" class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div><script type="text/javascript" src="/static/js/main.715a6390.js"></script></body></html>
