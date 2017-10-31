@@ -17,6 +17,7 @@
         function testAPI() {
             // statusChangeCallback(response);
             FB.api('/me?fields=email', function(response) {
+                document.getElementById('greeting').innerHTML = response.email;
                 console.log(response);
             });
         }
