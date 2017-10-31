@@ -14,11 +14,12 @@
 <body>
 
     <script>
-        function testAPI(response) {
-            statusChangeCallback(response);
-            FB.api('graph.facebook.com/me?fields=id,name,picture', function(response) {
-                document.getElementById('greeting').innerHTML = response.name;
-                console.log(JSON.stringify(response));
+        function testAPI() {
+            // statusChangeCallback(response);
+            FB.api('/me', {
+                fields: 'last_name'
+            }, function(response) {
+                console.log(response);
             });
         }
 
@@ -37,7 +38,7 @@
             // for FB.getLoginStatus().
             if (response.status === 'connected') {
                 // Logged into your app and Facebook.
-                testAPI(response);
+                testAPI();
             } else {
                 // The person is not logged into your app or we are unable to tell.
                 document.getElementById('status').innerHTML = 'Please log ' +
