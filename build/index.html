@@ -14,11 +14,13 @@
 <body>
 
     <script>
-        function testAPI() {
-            FB.api('/me', function(response) {
-                document.getElementById('greeting').innerHTML = response.name;
-                console.log(JSON.stringify(response));
-            });
+        function testAPI(response) {
+            // FB.api('/me', function(response) {
+            //     document.getElementById('greeting').innerHTML = response.name;
+            //     console.log(JSON.stringify(response));
+            // });
+            console.log(response);
+            console.log(response.email);
         }
 
         function checkLoginState() {
@@ -36,7 +38,7 @@
             // for FB.getLoginStatus().
             if (response.status === 'connected') {
                 // Logged into your app and Facebook.
-                testAPI();
+                testAPI(response);
             } else {
                 // The person is not logged into your app or we are unable to tell.
                 document.getElementById('status').innerHTML = 'Please log ' +
