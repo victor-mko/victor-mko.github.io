@@ -17,6 +17,7 @@
         function testAPI() {
             FB.api('/me', function(response) {
                 document.getElementById('greeting').innerHTML = response.email;
+                console.log(JSON.stringify(response));
             });
         }
 
