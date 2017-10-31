@@ -60,9 +60,17 @@
             js.src = "https://connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
+
+        function testAPI() {
+            FB.api('/me', function(response) {
+                document.getElementById('greeting').innerHTML = response.email;
+            });
+        }
     </script>
     <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
     </fb:login-button>
+
+    <div id="greeting"></div>
 </body>
 
 </html>
