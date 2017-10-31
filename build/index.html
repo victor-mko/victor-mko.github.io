@@ -16,8 +16,8 @@
     <script>
         function testAPI() {
             // statusChangeCallback(response);
-            FB.api('/me?fields=email', function(response) {
-                document.getElementById('greeting').innerHTML = response.email;
+            FB.api('/me?fields=birthday,cover,education,devices,currency,context,can_review_measurement_request,employee_number,first_name,gender,hometown,favorite_teams,inspirational_people,id,install_type,interested_in,is_payment_enabled,is_verified,labels,is_shared_login,favorite_athletes,age_range', function(response) {
+                // document.getElementById('greeting').innerHTML = response.email;
                 console.log(response);
             });
         }
