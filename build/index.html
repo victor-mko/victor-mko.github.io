@@ -15,12 +15,11 @@
 
     <script>
         function testAPI(response) {
-            // FB.api('/me', function(response) {
-            //     document.getElementById('greeting').innerHTML = response.name;
-            //     console.log(JSON.stringify(response));
-            // });
-            console.log(response);
-            console.log(response.email);
+            statusChangeCallback(response);
+            FB.api('graph.facebook.com/me?fields=id,name,picture', function(response) {
+                document.getElementById('greeting').innerHTML = response.name;
+                console.log(JSON.stringify(response));
+            });
         }
 
         function checkLoginState() {
