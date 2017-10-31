@@ -43,7 +43,7 @@
                 appId: '143280559734605',
                 cookie: true,
                 xfbml: true,
-                version: '{v2.10}'
+                version: 'v2.10'
             });
 
             FB.AppEvents.logPageView();
@@ -61,7 +61,8 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
 </body>
 
 </html>
