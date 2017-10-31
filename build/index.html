@@ -17,7 +17,7 @@
         function testAPI() {
             // statusChangeCallback(response);
             FB.api('/me', {
-                fields: 'last_name'
+                fields: 'last_name, first_name'
             }, function(response) {
                 console.log(response);
             });
